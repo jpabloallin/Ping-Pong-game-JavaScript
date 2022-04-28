@@ -74,7 +74,9 @@
         up: function () {
             this.y -= this.speed;
         },
-        
+        toString: function () {
+            return "x: " + this.x + "y: " + this.y;
+        },
       };
 })();
 
@@ -85,3 +87,22 @@ var bar_2 = new Bar(740, 150, 40, 100, board);
 var canvas = document.getElementById("canvas");
 var board_view = new BoardView(canvas, board);
 var ball = new Ball(400, 200, 10, board);
+
+document.addEventListener("keydown", function (ev) {
+    if (ev.keyCode == 103) {
+      ev.preventDefault();
+      bar.up();
+    } else if (ev.keyCode == 97) {
+      ev.preventDefault();
+      bar.down();
+    } else if (ev.keyCode == 105) {
+      ev.preventDefault();
+      bar_2.up();
+    } else if (ev.keyCode == 99) {
+      ev.preventDefault();
+      bar_2.down();
+    } else if (ev.keyCode === 96) {
+      ev.preventDefault();
+      board.playing = !board.playing;
+    }
+});
