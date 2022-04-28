@@ -84,14 +84,47 @@
             draw(this.cxt, el);
           }
         },
+        check_collisions: function () {
+            for (var i = this.board.bars.length - 1; i >= 0; i--) {
+              var bar = this.board.bars[i];
+              if (hit(bar, this.board.ball)) {
+                this.board.ball.collision(bar);
+              }
+            }
+          },
+          play: function () {
+            if (this.board.playing) {
+              this.clean();
+              this.draw();
+              this.check_collisions();
+              this.board.ball.move();
+            }
+          },
+        };
+        function hit(a, b) {
+          var hit = false;
+      
+          if (b.x + b.width >= a.x && b.x < a.x + a.width) {
+            if (b.y + b.height >= a.y && b.y < a.y + a.height) hit = true;
+          }
+      
+          if (b.x <= a.x && b.x + b.width >= a.x + a.width) {
+            if (b.y <= a.y && b.y + b.height >= a.y + a.height) hit = true;
+          }
+      
+          if (a.x <= b.x && a.x + a.width >= b.x + b.width) {
+            if (a.y <= b.y && a.y + a.height >= b.y + b.height) hit = true;
+          }
+          return hit;
+        }
 
-        function draw(cxt, element) {
-            switch (element.kind) {
-              case "rectangle":
+    function draw(cxt, element) {
+        switch (element.kind) {
+            case "rectangle":
                 cxt.fillRect(element.x, element.y, element.width, element.height);
                 break;
         
-              case "circle":
+            case "circle":
                 cxt.beginPath();
                 cxt.arc(element.x, element.y, element.radius, 0, 7);
                 cxt.fill();
