@@ -28,7 +28,7 @@
       this.board = board;
       this.cxt = canvas.getContext("2d");
     };
-    
+
     self.BoardView.prototype = {
         clean: function () {
           this.cxt.clearRect(0, 0, this.board.width, this.board.height);
@@ -39,7 +39,27 @@
     
             draw(this.cxt, el);
           }
+        },}
+
+(function () {
+    self.Bar = function (x, y, width, height, board) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+        this.board = board;
+        this.board.bars.push(this);
+        this.kind = "rectangle";
+        this.speed = 20;
+    };
+    self.Bar.prototype = {
+        down: function () {
         },
+        up: function () {
+        },
+        
+      };
+})();
 
 
 var board = new Board(800, 400);
