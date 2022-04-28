@@ -1,3 +1,6 @@
+/**
+ * Función del tablero del juego
+ */
 (function () {
     self.Board = function (width, height) {
         this.width = width;
@@ -19,6 +22,9 @@
         },
     };
 })();
+/**
+ * Función para crear la bola del juego y sus acciones
+ */
 (function () {
     self.Ball = function (x, y, radius, board) {
         this.x = x;
@@ -63,6 +69,9 @@
         },
     };
 })();
+/**
+ * Función para crear las barras laterales del juego y sus acciones
+ */
 (function () {
     self.Bar = function (x, y, width, height, board) {
         this.x = x;
@@ -87,6 +96,9 @@
         },
     };
 })();
+/**
+ * Función para mostrar los elementos del juego
+ */
 (function () {
     self.BoardView = function (canvas, board) {
         this.canvas = canvas;
@@ -156,6 +168,9 @@
         }
     }
 })();
+/**
+ * Dimensiones de los elementos del juego
+ */
 var board = new Board(800, 400);
 var bar = new Bar(20, 150, 40, 100, board);
 var bar_2 = new Bar(740, 150, 40, 100, board);
@@ -163,6 +178,9 @@ var canvas = document.getElementById("canvas");
 var board_view = new BoardView(canvas, board);
 var ball = new Ball(400, 200, 10, board);
 
+/**
+ * Evento para atrapar las teclas y poder ejercer los movimiento de las barras laterales
+ */
 document.addEventListener("keydown", function (ev) {
     if (ev.keyCode == 103) {
         ev.preventDefault();
@@ -182,6 +200,9 @@ document.addEventListener("keydown", function (ev) {
     }
 });
 
+/**
+ * Animación del juego
+ */
 board_view.draw();
 window.requestAnimationFrame(controller);
 setTimeout(function () {
