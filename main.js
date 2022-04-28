@@ -28,3 +28,23 @@
       this.board = board;
       this.cxt = canvas.getContext("2d");
     };
+    
+    self.BoardView.prototype = {
+        clean: function () {
+          this.cxt.clearRect(0, 0, this.board.width, this.board.height);
+        },
+        draw: function () {
+          for (var i = this.board.elements.length - 1; i >= 0; i--) {
+            var el = this.board.elements[i];
+    
+            draw(this.cxt, el);
+          }
+        },
+
+
+var board = new Board(800, 400);
+var bar = new Bar(20, 150, 40, 100, board);
+var bar_2 = new Bar(740, 150, 40, 100, board);
+var canvas = document.getElementById("canvas");
+var board_view = new BoardView(canvas, board);
+var ball = new Ball(400, 200, 10, board);
