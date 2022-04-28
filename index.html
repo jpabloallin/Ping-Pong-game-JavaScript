@@ -4,12 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <title>Ping Pong JavaScript</title>
 </head>
 <body>
-    <header><h1  class="title--header">PING PONG</h1></header>
-    <h2>BIENVENIDOS AL VIRTUAL PING PONG GAME</h2>
-    
+    <header><h1 class="title--header">BIENVENIDOS AL JUEGO PING PONG VIRTUAL</h1></header>
+
+    <div class="instrucciones">
+        <h1 class="instrucciones--titulo">INSTRUCIONES DEL JUEGO</h1>
+        <h3 class="instrucciones--subtitulo">
+          POR FAVOR, SIGUE LOS SIGUIENTES PASOS
+        </h3>
+        <ul class="instrucciones--listaInstrucciones">
+          <li>Para iniciar o pausar el juego oprime <b>0</b></li>
+          <li>
+            Para mover la barra <b>IZQUIERDA</b> hacia arriba oprime el <b>7</b>,
+            y el <b>1</b> para moverla hacia abajo
+          </li>
+          <li>
+            Para mover la barra <b>DERECHA</b> hacia arriba oprime el <b>9</b>, y
+            el <b>3</b> para moverla hacia abajo
+          </li>
+          <li>
+            Una vez se salga la <b>BOLA</b> del tablero presiona <b>F5</b> para
+            comenzar un nuevo juego
+          </li>
+        </ul>
+    </div>
     <section class="meza">
         <canvas id="canvas"></canvas>
     </section>
