@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: rgba(215, 213, 213, 0.493);
+  font-family: "Oswald", sans-serif;
+}
+
+.meza {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  background-color: rgb(0, 0, 0);
+}
+
+canvas {
+  margin: 20px;
+  border: solid green;
+  background: rgb(54, 181, 54);
+}
+header {
+  align-items: center;
+  text-align: center;
+}
+.title--header {
+  font-size: 40px;
+  text-align: center;
+}
+.instrucciones {
+  text-align: center;
+}
+.instrucciones--titulo {
+  margin: 10px;
+}
+.instrucciones--listaInstrucciones {
+  margin: 10px;
+  font-size: 25px;
+}

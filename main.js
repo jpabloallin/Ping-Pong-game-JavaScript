@@ -30,7 +30,7 @@
         this.direction = 1;
         this.bounce_angle = 0;
         this.max_bounce_angle = Math.PI / 12;
-        this.speed = 7;
+        this.speed = 5;
 
         board.ball = this;
         this.kind = "circle";
